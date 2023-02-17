@@ -3,11 +3,12 @@ import favouriteReducer from "../Reducers/favourite";
 import songReducer from "../Reducers/song";
 import { persistStore, persistReducer } from "redux-persist";
 import localStorage from "redux-persist/lib/storage";
+// import { encryptTransform } from "redux-persist-transform-encrypt";
 
 const persistConfig = {
   storage: localStorage,
   key: "root",
-  // transforms: [
+  //   transforms: [
   //     encryptTransform({
   //       secretKey: process.env.REACT_APP_ENV_SECRET_KEY,
   //     }),
