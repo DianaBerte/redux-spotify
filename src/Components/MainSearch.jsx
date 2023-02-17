@@ -3,15 +3,15 @@ import { useEffect, useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getSongsAction, GET_SONGS } from "../Redux/Actions";
-import Song from "./Song";
+// import Song from "./Song";
 
 const MainSearch = () => {
     const [query, setQuery] = useState('');
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const songsFromRedux = useSelector((state) => state.song);
+    // const songsFromRedux = useSelector((state) => state.song);
 
     const handleChange = (e) => {
         setQuery(e.target.value)
@@ -33,8 +33,8 @@ const MainSearch = () => {
         <Container>
           <Row>
             <Col xs={10} className="mx-auto my-3">
-              <h1>Search Song</h1>
-              <Button onClick={() => navigate('/favourites')}>Favourites</Button>
+              <h1>Search Song or Artist</h1>
+              <Button onClick={() => navigate('/favourites')}>Liked</Button>
             </Col>
             <Col xs={10} className="mx-auto">
               <Form onSubmit={handleSubmit}>
@@ -42,7 +42,7 @@ const MainSearch = () => {
                   type="search"
                   value={query}
                   onChange={handleChange}
-                  placeholder="type and press Enter"
+                  placeholder="Type and press Enter"
                 />
               </Form>
             </Col>

@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MainSearch from "./Components/MainSearch";
+import SongNameSearchResults from "./Components/SongNameSearchResults";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainSearch />} />
-          {/* <Route path="/:companyName" element={<CompanySearchResults />} /> */}
+          <Route path="/:songName" element={<SongNameSearchResults />} />
           {/* <Route path="/favourites" element={<Favourites />} /> */}
         </Routes>
       </BrowserRouter>
