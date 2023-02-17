@@ -3,6 +3,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MainSearch from "./Components/MainSearch";
 import SongNameSearchResults from "./Components/SongNameSearchResults";
+import Favourites from "./Components/Favourites";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainSearch />} />
           <Route path="/:songName" element={<SongNameSearchResults />} />
-          {/* <Route path="/favourites" element={<Favourites />} /> */}
+          <Route path="/favourites" element={<Favourites />} />
         </Routes>
       </BrowserRouter>
     </div>
