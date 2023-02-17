@@ -20,7 +20,7 @@ export const removeFromFavouriteAction = (song) => ({
 export const getSongsAction = (query) => {
   return async (dispatch) => {
     try {
-      const response = await fetch(baseEndpoint + query + "&limit=20");
+      const response = await fetch(baseEndpoint + query);
       if (response.ok) {
         const { data } = await response.json();
         console.log(data);

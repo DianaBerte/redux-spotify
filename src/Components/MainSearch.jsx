@@ -11,7 +11,7 @@ const MainSearch = () => {
     const [query, setQuery] = useState('');
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const songsFromRedux = useSelector((state) => state.song.result);
+    const songsFromRedux = useSelector((state) => state.song);
 
     const handleChange = (e) => {
         setQuery(e.target.value)
@@ -47,9 +47,9 @@ const MainSearch = () => {
               </Form>
             </Col>
             <Col xs={10} className="mx-auto mb-5">
-              {songsFromRedux.map((songData) => (
-                <Song key={songData._id} data={songData} />
-              ))}
+              {/* {songsFromRedux.map((songData) => (
+                <Song key={songData.id} data={songData} />
+              ))} */}
             </Col>
           </Row>
           {/* {applicationError && (<Alert variant="danger" className="mr-2 text-center">Oh no, error occurred!</Alert> )}
