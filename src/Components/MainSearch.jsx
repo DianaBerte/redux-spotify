@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getSongsAction, GET_SONGS } from "../Redux/Actions";
-import { Provider } from "react-redux";
 
 const MainSearch = () => {
     const [query, setQuery] = useState('');
