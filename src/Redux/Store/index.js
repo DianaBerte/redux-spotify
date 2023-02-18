@@ -17,7 +17,7 @@ const persistConfig = {
 
 const mainReducer = combineReducers({
   favourite: favouriteReducer,
-  job: songReducer,
+  song: songReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, mainReducer);

@@ -7,23 +7,26 @@ import SongNameSearchResults from "./Components/SongNameSearchResults";
 import Favourites from "./Components/Favourites";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+require("react-dom");
+window.React2 = require("react");
+console.log(window.React1 === window.React2);
 
 function App() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(SongNameSearchResults("queen"));
-  // }, []);
+  useEffect(() => {
+    dispatch(SongNameSearchResults("queen"));
+  }, []);
 
-  // let searchResult = useSelector((state) => state.search);
+  let searchResult = useSelector((state) => state.song);
 
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          {/* {searchResult.length > 0 && (
+          {searchResult.length > 0 && (
             <Route path="/" element={<MainSearch />} />
-          )} */}
+          )}
           <Route path="/" element={<MainSearch />} />
           <Route path="/:songName" element={<SongNameSearchResults />} />
           <Route path="/favourites" element={<Favourites />} />
